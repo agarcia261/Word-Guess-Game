@@ -1,0 +1,25 @@
+.showletter{
+    opacity:1;
+}
+.hideletter{
+    opacity: 0.5;
+}
+
+.guess-word{
+clear: both;
+}
+.position-letter{
+    float:left;
+    width: 20px;
+    margin:5px;
+    align-content: center;
+    border-bottom-width: 2px;
+    border-bottom-style:solid;
+    border-bottom-color: darkslategray;
+}
+.innerposition{
+}
+.scores{
+    clear: both;
+}
+
