@@ -3,20 +3,62 @@ $(document).ready(function() {
 
 
     var words= {
-        wordsarray:["test1","test2","test3"],
+        wordsarray:["test1","longerword","test3"],
         wins:0,
         numberofGuess:9,
         letterguessed:[],
+        matchingPos:[],
         notAmatch: function(){
-            if(this.numberofGuess>0){
-                this.numberofGuess--
+                this.numberofGuess--;
                 if(this.numberofGuess==0){
-                    //user lost
+                   alert("Game over Bitch")
                 }
-            }
+            
         },
         userwon: function() {
             this.wins++
+            this.letterguessed.splice()
+        },
+        pushkey:function(key){
+            if(this.letterguessed.indexOf(key)==-1){
+                this.letterguessed.push(key);
+                return false
+            }
+            else{
+                return true
+            }
+
+        },
+        searchkey: function(key){
+            var isKeyPressedAlready=this.pushkey(key);
+            if (this.numberofGuess==0){
+                var restartgame=prompt("want to restart the game?")
+                console.log(restartgame )
+            }
+            else if (!isKeyPressedAlready){
+                var hits=false;
+                for (i=0; i<this.wordsarray[wordpick].length; i++){
+                    if(wordchosen.charAt(i)==key) {
+                        this.matchingPos.push(i);
+                        hits=true;
+                    }
+
+                }
+                if (!hits && this.numberofGuess>0){
+                    this.notAmatch()
+                }
+                else if(!hits && this.numberofGuess==0){
+                    alert("Game over Bitch")
+
+                }
+                console.log(this.letterguessed)
+
+                console.log(this.numberofGuess)
+            }
+            else {
+                alert ("This key has already been pressed. Please try another one")
+                return
+            }
         },
         
     }
@@ -39,9 +81,8 @@ $(document).ready(function() {
         //I will append this to the ID Created on the HTML
         $("#word-to-guess").append(outerCharDivs);
     }
-
-    document.onkeyup = function(event){        
-        console.log(event)
+    document.onkeyup = function(event){  
+        var keyhit=words.searchkey(event.key)      
 };
     
 
