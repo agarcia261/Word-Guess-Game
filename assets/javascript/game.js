@@ -131,7 +131,7 @@ $(document).ready(function() {
             return 
         },
         alertWin: function(){
-            alert(" You Wont. Wo hoo!")        
+            alert(" You Won. Wo hoo!")        
         },
         searchkey: function(key){
             var isKeyPressedAlready=this.pushkey(key);
