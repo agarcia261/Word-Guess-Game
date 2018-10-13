@@ -1,5 +1,44 @@
-.showletter{
-    opacity:1;
+
+header{
+    text-align: center;   
+    margin:auto;
+    border-top: 2px solid #cccccc;
+    color: #cccccc;
+    text-align: center;
+    background: #666666;
+    border-bottom: 8px solid #4aaaa5;
+    
+}
+h1,
+h2,
+h3 {
+  font-family: Georgia, Times, "Times New Roman", serif;
+  font-weight: 700;
+}
+.body{
+    margin-top:20px;
+    background: #ffffff;
+
+}
+.left-section{
+    width:50%;
+    float:left;
+
+}
+.image-section{
+    margin:auto;
+    width:200px;
+}
+
+.image{
+    width:100%;
+}
+.right-section{
+    width:50%;
+    float: left;
+}
+.instructions{
+    text-align: center;
 }
 .hideletter{
     opacity: 0;
@@ -7,7 +46,7 @@
 
 .guess-word{
 clear: both;
-}
+}   
 .position-letter{
     float:left;
     width: 20px;
